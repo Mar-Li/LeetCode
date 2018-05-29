@@ -9,7 +9,7 @@ if __name__ == '__main__' and len(sys.argv) == 2:
     m = re.search(r"<title>(.*) - LeetCode</title>", html, re.S)
     m_id = re.search(r"questionId: '(\d+)'", html, re.S)
     if m and m_id:
-        filename = '_%s_%s.py' % (m_id.group(1), m.group(1).strip().replace(' ', '_'))
+        filename = '_%s_%s.cpp' % (m_id.group(1), m.group(1).strip().replace(' ', '_'))
         print(m.group(1))
         if os.path.isfile(filename):
             print("File exists")
